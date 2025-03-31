@@ -15,7 +15,7 @@
 
   <div class="col-md-3 text-end">
     <% if user_signed_in? %>
-      <%= link_to "プロフィール", "#, class: "btn btn-outline-secondary btn-sm me-2" %>
+      <%= link_to "プロフィール", "#", class: "btn btn-outline-secondary btn-sm me-2" %>
       <%= link_to "ログアウト", destroy_user_session_path,
                               data: { turbo_method: :delete }, class: "btn btn-outline-danger btn-sm me-4" %>
     <% else %>

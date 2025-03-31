@@ -16,7 +16,7 @@
   <div class="mb-3">
     <%= f.label :password, "パスワード", class: "form-label" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %>文字以上で</em>
+    <em>(<%= @minimum_password_length %>文字以上で)</em>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
   </div>
@@ -28,15 +28,15 @@
 
   <div class="mb-3">
     <%= f.label :profile_image, "プロフィール画像", class: "form-label" %>
-    <%= f.file_field, :profile_image, class: "form-control" %>
+    <%= f.file_field :profile_image, class: "form-control" %>
   </div>
 
   <div class="mb-4">
     <%= f.label :bio, "自己紹介", class: "form-label" %>
-    <%= f.text_area, :bio, class: "form-control" %>
+    <%= f.text_area :bio, class: "form-control" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 text-center">
     <%= f.submit "登録", class: "btn btn-outline-success" %>
   </div>
 <% end %>
