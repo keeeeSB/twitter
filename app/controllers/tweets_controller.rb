@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
     @tweet = current_user.tweets.build(tweet_params)
     if @tweet.save
       flash[:success] = "ツイートしました。"
-      redirect_to events_path
+      redirect_to tweets_path
     else
       flash.now[:danger] = "ツイートできませんでした。"
       render :new, status: :unprocessable_entity

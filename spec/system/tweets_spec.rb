@@ -13,6 +13,7 @@ RSpec.describe "ツイート機能", type: :system do
 
     expect {
       fill_in "いまどうしてる？", with: "railsなう。"
+      click_button "ツイート"
     }.to change(user.tweets, :count).by(1)
 
     expect(page).to have_content "ツイートしました。"
