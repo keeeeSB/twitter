@@ -3,6 +3,7 @@
     <%= image_tag tweet.image, class: "card-img-top", alt: "画像" %>
   <% end %>
   <div class="card-body">
+    <strong class="card-text"><%= tweet.user.name %></strong>
     <p class="card-text"><%= tweet.content %></p>
   </div>
 </div>
