@@ -1,13 +1,6 @@
 <% if @tweets.any? %>
   <% @tweets.each do |tweet| %>
-    <div class="card mb-3" style="width: 18rem;">
-      <% if tweet.image.present? %>
-        <%= image_tag tweet.image, class: "card-img-top", alt: "画像" %>
-      <% end %>
-      <div class="card-body">
-        <p class="card-text"><%= tweet.content %></p>
-      </div>
-    </div>
+    <%= render "tweet", tweet: tweet %>
   <% end %>
 <% else %>
   <p class="text-center">ツイートがありません。</p>
