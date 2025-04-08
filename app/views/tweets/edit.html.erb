@@ -1,8 +1,10 @@
-<%= form_with(model: @tweet, url: user_tweets_path(current_user), local: true) do |f| %>
+<h2 class="text-center mb-3">編集</h2>
+
+<%= form_with(model: @tweet, url: user_tweet_path(current_user, @tweet), local: true) do |f| %>
   <%= render "shared/error_messages", object: @tweet %>
 
   <div class="mb-3">
-    <%= f.label :content, "いまどうしてる？", class: "form-label" %>
+    <%= f.label :content, "いまなにしてる？", class: "form-label" %>
     <%= f.text_area :content, autofocus: true, class: "form-control" %>
   </div>
 
@@ -12,6 +14,6 @@
   </div>
 
   <div class="text-center mb-3">
-    <%= f.submit "ツイート", class: "btn btn-outline-primary" %>
+    <%= f.submit "更新", class: "btn btn-outline-primary" %>
   </div>
 <% end %>
