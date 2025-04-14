@@ -1,0 +1,17 @@
+<%= form_with(model: @tweet, url: user_tweets_path(current_user), local: true) do |f| %>
+  <%= render "shared/error_messages", object: @tweet %>
+
+  <div class="mb-3">
+    <%= f.label :content, "いまどうしてる？", class: "form-label" %>
+    <%= f.text_area :content, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :image, "画像", class: "form-label" %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="text-center mb-3">
+    <%= f.submit "ツイート", class: "btn btn-outline-primary" %>
+  </div>
+<% end %>

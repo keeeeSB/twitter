@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center mb-4">
+  <%= link_to user_tweet_path(tweet.user, tweet), class: "text-decoration-none text-dark" do %>
+    <div class="card" style="width: 20rem;">
+      <% if tweet.image.present? %>
+        <%= image_tag tweet.image, class: "card-img-top", alt: "画像" %>
+      <% end %>
+      <div class="card-body">
+        <strong class="card-text"><%= tweet.user.name %></strong>
+        <p class="card-text text-center"><%= tweet.content %></p>
+        <p class="crd-text text-secondary text-end">
+          <%= tweet.created_at.strftime('%Y年%m月%d日 %H:%M') %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<% if @tweets.any? %>
+  <% @tweets.each do |tweet| %>
+    <%= render "tweet", tweet: tweet %>
+  <% end %>
+<% else %>
+  <p class="text-center">ツイートがありません。</p>
+<% end %>
