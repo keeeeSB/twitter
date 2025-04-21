@@ -1,10 +1,13 @@
-<div class="card mx-auto" style="width: 30rem;">
-  <% if @tweet.image.present? %>
-    <%= image_tag @tweet.image, class: "card-img-top", alt: "画像" %>
-  <% end %>
+<div class="card mx-auto position-relative" style="width: 30rem;">
+  <div class="position-absolute top-0 end-0 m-3">
+    <%= like_button(current_user, @tweet) %>
+  </div>
   <div class="card-body">
     <h5 class="card-title"><strong><%= @tweet.user.name %></strong></h5>
     <p class="card-text"><%= @tweet.content %></p>
+    <% if @tweet.image.present? %>
+      <%= image_tag @tweet.image, class: "card-img-top", alt: "画像" %>
+    <% end %>
     <p class="text-muted small">投稿日: <%= l(@tweet.created_at, format: :long) %></p>
     <% if current_user == @tweet.user %>
       <%= link_to "編集", edit_user_tweet_path(current_user, @tweet),
