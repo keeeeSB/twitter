@@ -19,4 +19,16 @@ RSpec.describe "いいね機能", type: :system do
     expect(page).to have_content "いいねしました。"
     expect(current_path).to eq user_tweet_path(other_user, tweet)
   end
+
+  scenario "ユーザーはいいねを解除できる" do
+    Like.create!(user: user, tweet: tweet)
+
+    visit user_tweet_path(other_user, tweet)
+    expect {
+      find(".unlike-button").click
+    }.to change(Like, :count).by(-1)
+
+    expect(page).to have_content "いいねを解除しました。"
+    expect(current_path).to eq user_tweet_path(other_user, tweet)
+  end
 end
