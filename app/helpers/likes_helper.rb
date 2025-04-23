@@ -14,4 +14,10 @@ module LikesHelper
       end
     end
   end
+
+  def like_badge(user, tweet)
+    if tweet.likes.exists?(user_id: user.id)
+      image_tag "heart-fill.svg", width: 20, height: 20
+    end
+  end
 end

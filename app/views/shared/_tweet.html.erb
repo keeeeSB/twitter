@@ -1,6 +1,9 @@
 <div class="d-flex justify-content-center mb-4">
   <%= link_to user_tweet_path(tweet.user, tweet), class: "text-decoration-none text-dark" do %>
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width: 25rem;">
+      <div class="position-absolute top-0 end-0 m-3">
+        <%= like_badge(current_user, tweet) %>
+      </div>
       <% if tweet.image.present? %>
         <%= image_tag tweet.image, class: "card-img-top", alt: "画像" %>
       <% end %>
