@@ -1,8 +1,8 @@
 class LikesController < ApplicationController
-  before_action :set_tweet
+  before_action :set_tweet, only: [ :create, :destroy ]
 
   def index
-    @likes = current_user.likes.order_by_tweet_created_at
+    @liked_tweets = current_user.like_tweets.order(created_at: :desc)
   end
 
   def create

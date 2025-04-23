@@ -8,7 +8,8 @@
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
     <% if user_signed_in? %>
       <li><%= link_to "ホーム", tweets_path, class: "nav-link px-2 link-secondary" %></li>
-      <li><%= link_to "ツイートする", new_user_tweet_path(current_user), class: "nav-link px-2 link-secondary" %></li>
+      <li><%= link_to "ツイート", new_user_tweet_path(current_user), class: "nav-link px-2 link-secondary" %></li>
+      <li><%= link_to "いいね一覧", likes_path, class: "nav-link px-2 link-secondary" %></li>
     <% else %>
       <li><%= link_to "ホーム", root_path, class: "nav-link px-2 link-secondary" %></li>
     <% end %>

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :tweets, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :like_tweet, through: :likes, source: :tweet
+  has_many :like_tweets, through: :likes, source: :tweet
 
   validates :name, presence: true
   validates :bio, length: { maximum: 50 }
