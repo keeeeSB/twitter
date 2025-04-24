@@ -1,0 +1,7 @@
+<% if @liked_tweets.any? %>
+  <% @liked_tweets.each do |tweet| %>
+    <%= render "shared/tweet", tweet: tweet %>
+  <% end %>
+<% else %>
+  <p class="text-center">いいねをしたツイートがありません。</p>
+<% end %>
