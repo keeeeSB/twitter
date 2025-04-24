@@ -6,7 +6,7 @@
     <h5 class="card-title"><strong><%= @tweet.user.name %></strong></h5>
     <p class="card-text"><%= @tweet.content %></p>
     <% if @tweet.image.present? %>
-      <%= image_tag @tweet.image, class: "card-img-top", alt: "画像" %>
+      <%= image_tag @tweet.image.url, class: "card-img-top", alt: "画像" %>
     <% end %>
     <p class="text-muted small">投稿日: <%= l(@tweet.created_at, format: :long) %></p>
     <% if current_user == @tweet.user %>
